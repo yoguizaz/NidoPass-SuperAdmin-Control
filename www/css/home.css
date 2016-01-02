@@ -1,0 +1,37 @@
+* {padding:0px; margin:0px;}
+/*#cuerpo {}
+ul.menu_home {list-style:none; margin:0px; padding:0px;}
+ul.menu_home li  {float:left; width:34%; background:url("../img/fondo_iconos_home.png") no-repeat right bottom;}
+ul.menu_home li:hover  {background:url("../img/fondo_iconos_home_hover.png") no-repeat right bottom;}
+ul.menu_home li.especial  {width:32%; background:url("../img/fondo_iconos_home_final.png") no-repeat right bottom;}
+ul.menu_home li:hover.especial  {width:32%; background:url("../img/fondo_iconos_home_final_hover.png") no-repeat right bottom;}
+ul.menu_home li a {display:block; padding:5px; font-size:20px; margin-bottom:1px; text-align:center; color:#FFF;}
+ul.menu_home li a span {font-size:10px;}
+ul.menu_home li a i {font-size:180%; margin-bottom:5px; display:block; margin-top:5px;}
+ul.menu_home li a p {margin:0px; padding:0px; line-height:normal; font-size:12px; font-weight:bold; text-transform:uppercase;}
+*/
+
+#cuerpo {}
+ul.menu_home {list-style:none; margin:0px; padding:0px;}
+ul.menu_home li  {float:left; width:34%; background:#FFFFFF no-repeat right bottom;}
+ul.menu_home li:hover  {background:#FFFFFF no-repeat right bottom;}
+ul.menu_home li.especial  {width:32%; background:#FFFFFF no-repeat right bottom;}
+ul.menu_home li:hover.especial  {width:32%; background:#FFFFFF no-repeat right bottom;}
+ul.menu_home li a {display:block; padding:5px; font-size:20px; color:#414042; margin-bottom:1px; text-align:center; color:#FFF;}
+ul.menu_home li a span {font-size:10px; color:#414042;}
+ul.menu_home li a i {font-size:180%; margin-bottom:5px; display:block; margin-top:5px;}
+ul.menu_home li a p {margin:0px; padding:0px; line-height:normal; font-size:12px; font-weight:bold; text-transform:uppercase;}
+#contenidoCuerpo {margin:0px;}
+
+.general {position:relative;bottom:0px;left:0px; margin-top:0%; padding-top:3%; width:100%;background:#FFFFFF !important;}
+
+#nidoImagen {
+    content:url("../img/logonido.png");
+	width: 80px;
+}
+.invisibleLink {
+    display: block;
+    left: 55px; top: 55px;
+    position: absolute;
+    height: 55px width: 55px;
+}

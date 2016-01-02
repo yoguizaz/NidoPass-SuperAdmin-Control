@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.nidoapp.nidopasssuperadmincontrol"
+    version   = "1.0.0">
+    
+    <name>NidoPass SuperAdmin Control</name>
+    
+    <description>
+        Servicio de control de entradas para SuperAdmin.
+    </description>
+    
+    <author href="http://www.nidoapp.com" email="dmv@nidoapp.com">
+        Nido Aplicaciones
+    </author>
+    
+    <preference name="phonegap-version" value="3.1.0" />
+    
+    <preference name="android-installLocation" value="preferExternal" />
+    
+    <preference name="orienation" value="default" />
+    
+    <preference name="DisallowOverscroll" value="true" />
+    
+    <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
+    
+    <plugin name="Notification" value="CDVNotification" />
+    
+    <cordova>
+        <access origin="*"/>
+        <access origin="https://adobeformscentral.com/?f=eAdCyrrspYqaA9XBKyQ3jA" browserOnly="false"/>
+        <log level="DEBUG"/>
+    </cordova>
+    
+    
+    
+    <!-- Icons -->
+    
+    <icon src="img/icons/icon.png" />
+    <icon src="img/icons/ios/icon.png" width="57" height="57" />
+    <icon src="img/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="img/icons/ios/icon_at_2x.png" width="114" height="114" />
+    <icon src="img/icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="img/icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="img/icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="img/icons/bb/icon.png" gap:platform="blackberry" />
+    <icon src="img/icons/bb/icon_hover.png" gap:platform="blackberry" gap:state="hover"/>
+    <icon src="img/icons/winphone/icon.png" gap:platform="winphone" />
+    <!-- winphone requires a jpg for the tile icons -->
+    <icon src="img/icons/winphone/tileicon.png" gap:platform="winphone" gap:role="background" />
+    <icon src="img/icons/webos/icon.png" gap:platform="webos" />
+    <icon src="img/icons/webos/miniicon.png" gap:platform="webos" gap:role="mini" />
+    
+    <!-- Splash Screens -->
+    <gap:splash src="img/splash/splash.png" />
+    <gap:splash src="img/splash/ios/Default-Landscape.png" width="1024" height="768" />
+    <gap:splash src="img/splash/ios/Default-Portrait.png" width="768" height="1024" />
+    <gap:splash src="img/splash/ios/Default.png" width="320" height="480" />
+    <gap:splash src="img/splash/ios/Default_at_2x.png" width="640" height="960" />
+    <gap:splash src="img/splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="img/splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="img/splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="img/splash/bb/splash.png" gap:platform="blackberry" />
+    <gap:splash src="img/splash/winphone/splash.jpg" gap:platform="winphone" />
+    
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App"/>
+    </feature>
+    <!--<feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.GeoBroker"/>
+    </feature>-->
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.Device"/>
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="android-package" value="org.apache.cordova.AccelListener"/>
+    </feature>
+    <feature name="Compass">
+        <param name="android-package" value="org.apache.cordova.CompassListener"/>
+    </feature>
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.AudioHandler"/>
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.CameraLauncher"/>
+    </feature>
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.ContactManager"/>
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.FileUtils"/>
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.NetworkManager"/>
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.Notification"/>
+    </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
+    <feature name="Storage">
+        <param name="android-package" value="org.apache.cordova.Storage"/>
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.FileTransfer"/>
+    </feature>
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.Capture"/>
+    </feature>
+    <feature name="Battery">
+        <param name="android-package" value="org.apache.cordova.BatteryListener"/>
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.SplashScreen"/>
+    </feature>
+    <feature name="Echo">
+        <param name="android-package" value="org.apache.cordova.Echo"/>
+    </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.Globalization"/>
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
+    </feature>
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+    </feature>
+    <feature name="BarcodeScanner">
+        <param name="ios-package" value="CDVBarcodeScanner" />
+    </feature>
+    
+</widget>

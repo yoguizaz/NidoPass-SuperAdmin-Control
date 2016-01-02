@@ -1,0 +1,31 @@
+<style>
+/*.scroller {height:97% !important;}*/
+.scroller {height:97% !important; overflow: scroll !important; -webkit-overflow-scrolling: touch !important; margin:0px;}
+#map_results img {
+max-width: none;
+}
+</style>
+
+<div class="row-fluid" style="padding-top:5%;">
+	<div class="span3">
+		<a href="#" onclick="historyBack();" class="btn btn-default btn-large" style="margin-top: 10px; margin-bottom: 10px;"> Volver</a>
+	</div>
+    <div style="clear:both;"></div>
+	<div class="span3">
+		<div class="distance_map" id="distanceMap"></div>
+	</div>
+	<div class="span3">
+		<div class="time_map" id="timeMap"></div>
+	</div>
+	<div class="span3">
+		<select id="restaurantMapGoMode" onchange="calcRoute();" style="margin-top: 15px; width:10em;">
+		  <option value="WALKING">Andando</option>
+	      <option value="DRIVING">En coche</option>
+	    </select>
+	</div>
+</div>
+<!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=Restaurante+Malvassia,+Zaragoza&amp;aq=0&amp;oq=Restaurante+malvas&amp;sll=41.663936,-0.983105&amp;sspn=0.102849,0.264187&amp;ie=UTF8&amp;hq=Restaurante+Malvassia,&amp;hnear=Zaragoza,+Arag%C3%B3n&amp;t=m&amp;ll=41.642294,-0.911186&amp;spn=0.014293,0.047531&amp;output=embed"></iframe> -->
+
+<!--<div id="map_results"></div> -->
+
+<div id="map_restaurant" style="width: 100%; height: 60% !important; frameborder: 0; scrolling: no; marginheight: 0; marginwidth: 0;"></div>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="css/jqueryui.css" />
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+
+        
+        <!-- BUSCADOR -->
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="cordova_plugins.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+$(function()
+{
+
+$("#mostrar").click(function(event) {
+event.preventDefault();
+$("#caja").slideToggle();
+});
+
+$("#caja a").click(function(event) {
+event.preventDefault();
+$("#caja").slideUp();
+});
+});
+
+//ENVIO EMAIL SUGERENCIAS
+function ajaxFormulario(e){
+    showLoading();
+    var url = "http://mailer.nidoapp.com/sugerencias.php"; // the script where you handle the form input.
+    
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formularioSugerencias").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+                //alert(data); // show response from the php script.
+                $("#interior_dentro").html("<div style='padding-top:20% !important; text-align:center;'>"+data+"<p>En breve volver&aacute; a la pantalla principal automaticamente.</p></div>");
+                hideLoading();
+                setTimeout(function(){
+                      showHome();
+                },7000);
+           },
+           error: function() {
+                $("#interior_dentro").html("<div style='padding-top:20% !important; text-align:center;'><p>No se ha podido su sugerencia, inténtelo de nuevo más tarde. Disculpe las molestias.</p><p>En breve volver&aacute; al formulario de sugerencias automaticamente.</p></div>");
+                hideLoading();
+                setTimeout(function(){
+                      show("sugerencias");
+                },7000);
+           }
+           });
+           
+            e.preventDefault();
+}
+//FIN ENVIO EMAIL SUGERENCIAS
+
+</script>
+
+
+<!-- ESTILO LOADER CSS  -->
+<style>
+    #floatingCirclesG{
+        left:35%;
+        position:relative;
+        width:52px;
+        height:52px;
+        -moz-transform:scale(0.6);
+        -webkit-transform:scale(0.6);
+        -ms-transform:scale(0.6);
+        -o-transform:scale(0.6);
+        transform:scale(0.6);
+    }
+
+.f_circleG{
+    position:absolute;
+    background-color:#FFFFFF;
+    height:9px;
+    width:9px;
+    -moz-border-radius:5px;
+    -moz-animation-name:f_fadeG;
+    -moz-animation-duration:0.72s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-direction:linear;
+    -webkit-border-radius:5px;
+    -webkit-animation-name:f_fadeG;
+    -webkit-animation-duration:0.72s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-direction:linear;
+    -ms-border-radius:5px;
+    -ms-animation-name:f_fadeG;
+    -ms-animation-duration:0.72s;
+    -ms-animation-iteration-count:infinite;
+    -ms-animation-direction:linear;
+    -o-border-radius:5px;
+    -o-animation-name:f_fadeG;
+    -o-animation-duration:0.72s;
+    -o-animation-iteration-count:infinite;
+    -o-animation-direction:linear;
+    border-radius:5px;
+    animation-name:f_fadeG;
+    animation-duration:0.72s;
+    animation-iteration-count:infinite;
+    animation-direction:linear;
+}
+
+#frotateG_01{
+    left:0;
+    top:21px;
+    -moz-animation-delay:0.27s;
+    -webkit-animation-delay:0.27s;
+    -ms-animation-delay:0.27s;
+    -o-animation-delay:0.27s;
+    animation-delay:0.27s;
+}
+
+#frotateG_02{
+    left:6px;
+    top:6px;
+    -moz-animation-delay:0.36s;
+    -webkit-animation-delay:0.36s;
+    -ms-animation-delay:0.36s;
+    -o-animation-delay:0.36s;
+    animation-delay:0.36s;
+}
+
+#frotateG_03{
+    left:21px;
+    top:0;
+    -moz-animation-delay:0.45s;
+    -webkit-animation-delay:0.45s;
+    -ms-animation-delay:0.45s;
+    -o-animation-delay:0.45s;
+    animation-delay:0.45s;
+}
+
+#frotateG_04{
+    right:6px;
+    top:6px;
+    -moz-animation-delay:0.54s;
+    -webkit-animation-delay:0.54s;
+    -ms-animation-delay:0.54s;
+    -o-animation-delay:0.54s;
+    animation-delay:0.54s;
+}
+
+#frotateG_05{
+    right:0;
+    top:21px;
+    -moz-animation-delay:0.63s;
+    -webkit-animation-delay:0.63s;
+    -ms-animation-delay:0.63s;
+    -o-animation-delay:0.63s;
+    animation-delay:0.63s;
+}
+
+#frotateG_06{
+    right:6px;
+    bottom:6px;
+    -moz-animation-delay:0.72s;
+    -webkit-animation-delay:0.72s;
+    -ms-animation-delay:0.72s;
+    -o-animation-delay:0.72s;
+    animation-delay:0.72s;
+}
+
+#frotateG_07{
+    left:21px;
+    bottom:0;
+    -moz-animation-delay:0.81s;
+    -webkit-animation-delay:0.81s;
+    -ms-animation-delay:0.81s;
+    -o-animation-delay:0.81s;
+    animation-delay:0.81s;
+}
+
+#frotateG_08{
+    left:6px;
+    bottom:6px;
+    -moz-animation-delay:0.9s;
+    -webkit-animation-delay:0.9s;
+    -ms-animation-delay:0.9s;
+    -o-animation-delay:0.9s;
+    animation-delay:0.9s;
+}
+
+@-moz-keyframes f_fadeG{
+    0%{
+        background-color:#FF0000}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@-webkit-keyframes f_fadeG{
+    0%{
+        background-color:#FF0000}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@-ms-keyframes f_fadeG{
+    0%{
+        background-color:#FF0000}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@-o-keyframes f_fadeG{
+    0%{
+        background-color:#FF0000}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@keyframes f_fadeG{
+    0%{
+        background-color:#FF0000}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+    </style>
+
+<!--  FIN ESTILO LOADER CSS -->
+        
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        
+        <title>Sistema de reservas - Comer en Aragón</title>
+    </head>
+    <body>
+
+
+<div id="caja">
+<div class="buscador"><input type="text" placeholder="Buscador de Restaurante"></div>
+<div class="cerrar"><a href="#" class="close"><i class="icon-remove-sign" style="color:#FFF;"></i></a></div>
+</div>
+		<div id="menuprincipal">
+			<div id="wrapperMenu">
+					<div id="contenidoMenu" style="height:100%; margin-top:5%;"></div>
+			</div>
+		</div>
+
+
+    	<div id="cuerpo">
+	        <div id="header">
+	        	<a href="javascript:show('menu');">
+	        	<!-- <div class="btn"> --> <img src="./img/menu.png" style="position: absolute;left: 5px;"><!-- <i class="icon-align-justify"></i></div> -->
+	        	</a> Comer en Arag&oacute;n
+				<a href="javascript:showFavorites();" ><img src="./img/favs.png" style="height:30px;position: absolute;right: 45px;margin-top:5px;"></a>
+				<a href="javascript:showHome();" ><img src="./img/home.png" style="height:30px;position: absolute;right: 10px;margin-top:5px;"></a>
+	        	</div>
+	        	<div id="caja"></div>
+			<div id="wrapper">
+				<div class="scroller">
+					<div id="contenidoCuerpo"></div>					
+				</div>
+			</div>
+		</div>
+		<!--<img id="loading" src="img/ajax-loader.gif" style="display: none;">-->
+        <!--  LOADER -->
+        <div id="floatingCirclesG" style="display:none;">
+        <div class="f_circleG" id="frotateG_01">
+        </div>
+        <div class="f_circleG" id="frotateG_02">
+        </div>
+        <div class="f_circleG" id="frotateG_03">
+        </div>
+        <div class="f_circleG" id="frotateG_04">
+        </div>
+        <div class="f_circleG" id="frotateG_05">
+        </div>
+        <div class="f_circleG" id="frotateG_06">
+        </div>
+        <div class="f_circleG" id="frotateG_07">
+        </div>
+        <div class="f_circleG" id="frotateG_08">
+        </div>
+        </div>
+        <!--  FIN LOADER -->
+        
+        <!--<script type="text/javascript" src="js/fastclick.js"></script> -->
+        <!--<script type="text/javascript" src="js/iscroll.js"></script> -->
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/remote.js"></script>
+        <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/jquery.blockui.min.js"></script> 
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+        <script type="text/javascript" src="js/jquery-ui.js"></script> 
+        
+
+        <script type="text/javascript">
+
+            window.twttr = (function (d,s,id) {
+              var t, js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+              js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+              return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+            }(document, "script", "twitter-wjs"));
+
+        </script>
+    </body>
+</html>

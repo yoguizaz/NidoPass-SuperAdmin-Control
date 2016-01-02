@@ -1,0 +1,2 @@
+Aplicación Móvil para la reserva de Restaurantes.
+Aplicación marca blanca, para la integración de asociaciones / restaurantes.

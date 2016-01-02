@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="css/jqueryui.css" />
+        
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
+        <!-- BUSCADOR -->
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="cordova_plugins.js" type="text/javascript" charset="utf-8"></script>
+        
+<script type="text/javascript">
+$(function()
+{
+	/*Ultima actualizacion*/
+	if(window.location.href.indexOf("movefav") > -1) {
+	   setTimeout(function(){
+            showFavorites();
+	   },3500);
+    } else if(window.location.href.indexOf("movehome") > -1) {
+        setTimeout(function(){
+             showResults();
+        },1000);
+    } else if(window.location.href.indexOf("movemisreservas") > -1) {
+        setTimeout(function(){
+             show("misReservas");
+        },1000);
+    } else if(window.location.href.indexOf("movepromociones") > -1) {
+        setTimeout(function(){
+             //searchPromotions(false);
+            show("promotionsIndex");
+        },1000);
+    } else if(window.location.href.indexOf("moveeventos") > -1) {
+        setTimeout(function(){
+            searchAssociationNews();
+            //searchNews();
+        },1000);
+    } else if(window.location.href.indexOf("movecontacto") > -1) {
+        setTimeout(function(){
+             show("contacto");
+        },1000);
+    } else if(window.location.href.indexOf("movesugerencias") > -1) {
+        setTimeout(function(){
+             show("sugerencias");
+        },1000);
+    } else if(window.location.href.indexOf("moveavisolegal") > -1) {
+        setTimeout(function(){
+             show("avisoLegal");
+        },1000);
+    } else if(window.location.href.indexOf("movetwitter") > -1) {
+        setTimeout(function(){
+             showTwitter();
+        },1000);
+    }
+	/****/
+$("#mostrar").click(function(event) {
+event.preventDefault();
+$("#caja").slideToggle();
+});
+
+$("#caja a").click(function(event) {
+event.preventDefault();
+$("#caja").slideUp();
+});
+});
+
+//ENVIO EMAIL SUGERENCIAS
+function ajaxFormulario(e){
+    showLoading();
+    var url = "http://mailer.nidoapp.com/sugerencias.php"; // the script where you handle the form input.
+    
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formularioSugerencias").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+                //alert(data); // show response from the php script.
+                $("#interior_dentro").html("<div style='padding-top:20% !important; text-align:center;'>"+data+"<p>En breve volver&aacute; a la pantalla principal automaticamente.</p></div>");
+                hideLoading();
+                setTimeout(function(){
+                      showHome();
+                },7000);
+           },
+           error: function() {
+                $("#interior_dentro").html("<div style='padding-top:20% !important; text-align:center;'><p>No se ha podido su sugerencia, inténtelo de nuevo más tarde. Disculpe las molestias.</p><p>En breve volver&aacute; al formulario de sugerencias automaticamente.</p></div>");
+                hideLoading();
+                setTimeout(function(){
+                      show("sugerencias");
+                },7000);
+           }
+           });
+           
+            e.preventDefault();
+}
+//FIN ENVIO EMAIL SUGERENCIAS
+
+</script>
+
+
+<!-- ESTILO LOADER CSS  -->
+<style>
+    #floatingCirclesG{
+        left:35%;
+        position:relative;
+        width:52px;
+        height:52px;
+        -moz-transform:scale(0.6);
+        -webkit-transform:scale(0.6);
+        -ms-transform:scale(0.6);
+        -o-transform:scale(0.6);
+        transform:scale(0.6);
+    }
+
+.f_circleG{
+    position:absolute;
+    background-color:#FFFFFF;
+    height:9px;
+    width:9px;
+    -moz-border-radius:5px;
+    -moz-animation-name:f_fadeG;
+    -moz-animation-duration:1.04s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-direction:linear;
+    -webkit-border-radius:5px;
+    -webkit-animation-name:f_fadeG;
+    -webkit-animation-duration:1.04s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-direction:linear;
+    -ms-border-radius:5px;
+    -ms-animation-name:f_fadeG;
+    -ms-animation-duration:1.04s;
+    -ms-animation-iteration-count:infinite;
+    -ms-animation-direction:linear;
+    -o-border-radius:5px;
+    -o-animation-name:f_fadeG;
+    -o-animation-duration:1.04s;
+    -o-animation-iteration-count:infinite;
+    -o-animation-direction:linear;
+    border-radius:5px;
+    animation-name:f_fadeG;
+    animation-duration:1.04s;
+    animation-iteration-count:infinite;
+    animation-direction:linear;
+}
+
+#frotateG_01{
+    left:0;
+    top:21px;
+    -moz-animation-delay:0.39s;
+    -webkit-animation-delay:0.39s;
+    -ms-animation-delay:0.39s;
+    -o-animation-delay:0.39s;
+    animation-delay:0.39s;
+}
+
+#frotateG_02{
+    left:6px;
+    top:6px;
+    -moz-animation-delay:0.52s;
+    -webkit-animation-delay:0.52s;
+    -ms-animation-delay:0.52s;
+    -o-animation-delay:0.52s;
+    animation-delay:0.52s;
+}
+
+#frotateG_03{
+    left:21px;
+    top:0;
+    -moz-animation-delay:0.65s;
+    -webkit-animation-delay:0.65s;
+    -ms-animation-delay:0.65s;
+    -o-animation-delay:0.65s;
+    animation-delay:0.65s;
+}
+
+#frotateG_04{
+    right:6px;
+    top:6px;
+    -moz-animation-delay:0.78s;
+    -webkit-animation-delay:0.78s;
+    -ms-animation-delay:0.78s;
+    -o-animation-delay:0.78s;
+    animation-delay:0.78s;
+}
+
+#frotateG_05{
+    right:0;
+    top:21px;
+    -moz-animation-delay:0.91s;
+    -webkit-animation-delay:0.91s;
+    -ms-animation-delay:0.91s;
+    -o-animation-delay:0.91s;
+    animation-delay:0.91s;
+}
+
+#frotateG_06{
+    right:6px;
+    bottom:6px;
+    -moz-animation-delay:1.04s;
+    -webkit-animation-delay:1.04s;
+    -ms-animation-delay:1.04s;
+    -o-animation-delay:1.04s;
+    animation-delay:1.04s;
+}
+
+#frotateG_07{
+    left:21px;
+    bottom:0;
+    -moz-animation-delay:1.17s;
+    -webkit-animation-delay:1.17s;
+    -ms-animation-delay:1.17s;
+    -o-animation-delay:1.17s;
+    animation-delay:1.17s;
+}
+
+#frotateG_08{
+    left:6px;
+    bottom:6px;
+    -moz-animation-delay:1.3s;
+    -webkit-animation-delay:1.3s;
+    -ms-animation-delay:1.3s;
+    -o-animation-delay:1.3s;
+    animation-delay:1.3s;
+}
+
+@-moz-keyframes f_fadeG{
+    0%{
+        background-color:#21c368}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@-webkit-keyframes f_fadeG{
+    0%{
+        background-color:#21c368}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@-ms-keyframes f_fadeG{
+    0%{
+        background-color:#21c368}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@-o-keyframes f_fadeG{
+    0%{
+        background-color:#21c368}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+@keyframes f_fadeG{
+    0%{
+        background-color:#21c368}
+    
+    100%{
+        background-color:#FFFFFF}
+    
+}
+
+    </style>
+
+<!--  FIN ESTILO LOADER CSS -->
+        
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        
+        <title>NidoPass SuperAdmin Control</title>
+    </head>
+    <body>
+
+
+<div id="caja">
+<div class="buscador"><input type="text" placeholder="Buscador de Restaurante"></div>
+<div class="cerrar"><a href="#" class="close"><i class="icon-remove-sign" style="color:#FFF;"></i></a></div>
+</div>
+		<div id="menuprincipal">
+			<div id="wrapperMenu">
+					<div id="contenidoMenu" style="height:100%; margin-top:0%; padding-top:15%; background:#FFFFFF;"></div>
+			</div>
+		</div>
+
+
+    	<div id="cuerpo">
+	        <div id="header" style="padding-top:3% !important;">
+	        	<a href="javascript:show('menu');">
+	        	<!-- <div class="btn"> --> <img src="./img/menu.png" style="position: absolute;left: 5px;"><!-- <i class="icon-align-justify"></i></div> -->
+	        	</a> NidoPass SuperAdmin Control<!-- - <span id="index2PubName"></span>-->
+				<!--<a href="javascript:showFavorites();" ><img src="./img/favs.png" style="height:30px;position: absolute;right: 45px;margin-top:3%;"></a>
+				<a href="javascript:showHome();" ><img src="./img/home.png" style="height:30px;position: absolute;right: 10px;margin-top:3%;"></a>-->
+				<!--<a href="#" onclick="javascript:showQRCodeScanner();">
+					<img src="./img/ic_qr_white.png" style="height:30px;position: absolute;right: 20px;margin-top:3%;"/>
+				</a>-->
+	        	</div>
+	        	<div id="caja"></div>
+			<div id="wrapper" >
+				<div id="cajaScroll" class="scroller">
+					<div id="contenidoCuerpo" style="background:#e5e4e2 !important;"></div>					
+				</div>
+			</div>
+		</div>
+		<!--<img id="loading" src="img/ajax-loader.gif" style="display: none;">-->
+        <!--  LOADER -->
+        <div id="floatingCirclesG" style="display:none;">
+        <div class="f_circleG" id="frotateG_01">
+        </div>
+        <div class="f_circleG" id="frotateG_02">
+        </div>
+        <div class="f_circleG" id="frotateG_03">
+        </div>
+        <div class="f_circleG" id="frotateG_04">
+        </div>
+        <div class="f_circleG" id="frotateG_05">
+        </div>
+        <div class="f_circleG" id="frotateG_06">
+        </div>
+        <div class="f_circleG" id="frotateG_07">
+        </div>
+        <div class="f_circleG" id="frotateG_08">
+        </div>
+        </div>
+        <!--  FIN LOADER -->
+        
+        <!--<script type="text/javascript" src="js/fastclick.js"></script> -->
+        <!--<script type="text/javascript" src="js/iscroll.js"></script> -->
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/remote.js"></script>
+        <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/jquery.blockui.min.js"></script> 
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+        <script type="text/javascript" src="js/jquery-ui.js"></script> 
+        
+
+        <script type="text/javascript">
+
+            window.twttr = (function (d,s,id) {
+              var t, js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+              js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+              return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+            }(document, "script", "twitter-wjs"));
+
+        </script>
+    </body>
+</html>

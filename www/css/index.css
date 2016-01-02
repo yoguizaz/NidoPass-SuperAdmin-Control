@@ -1,0 +1,885 @@
+/*
+* {
+    -webkit-user-select: none;
+     font-family: 'Open Sans', sans-serif;
+     margin:0px;
+     padding:0px;
+}
+*/
+@font-face{
+   font-family: "Gotham";
+   font-style: normal;
+   font-weight: normal;
+   src: url(../font/Gotham/Gotham-Book.otf);
+}
+@font-face{
+   font-family: "Helvetica Neue";
+   font-style: normal;
+   font-weight: normal;
+   src: url(../font/Helvetica Neue/HelveticaNeueLTStd-It.otf);
+}
+
+body {
+    font-size:16px;
+    height:100%;
+    width:100%;
+    padding:0;
+	margin:0;
+	border:0;
+	position: fixed;
+	font-family:Helvetica Neue !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a.nounderline:link   
+{   
+ text-decoration:none;   
+}
+a:hover{
+    text-decoration: none;
+}
+
+/*Inicio estilos de la cabecera*/
+#header {
+	position:absolute; z-index:12;
+	top:0; left:0;
+    /*padding-top:3% !important;*/
+	width:100%;
+	background:#414042;
+	border-bottom: 0px;
+	padding:0;
+	color:#FFF;
+	font-size:16px;
+	line-height: 45px;
+	text-align:center;
+	height: 45px;
+	font-weight:900;
+}
+
+#header .btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width:10%;
+    line-height: 36px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size:22px;
+	/*border:1px solid #113c10;*/
+	padding:0px 4px;
+	background:none;
+	border:0px;
+	color:#FFF!important;
+	text-shadow:0px 0px 0px #333;
+}
+
+#header .btn_der {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width:10%;
+    line-height: 36px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size:22px;
+	/*border:1px solid #113c10;*/
+	padding:0px 4px;
+	background:none;
+	border:0px;
+	color:#FFF!important;
+	text-shadow:0px 0px 0px #333;
+
+}
+
+#header .btn:active {
+    background-color:#0f6f91;
+}
+
+.logo{
+	height:32px; 
+	width:auto; 
+	margin-top:6px
+}
+/*Fin estilos de la cabecera*/
+
+/*Inicio estilo del cuerpo*/
+#cuerpo{
+	background:#FFFFFF;
+	position:absolute;
+	width: 100%;
+	height:100%;
+}
+
+#cuerpo h1{
+	font-size:20px;
+	line-height:30px
+}
+
+.borde-h1{
+	width:5px;
+	float:left;
+	height:30px;
+	margin-right:5px
+}
+
+#contenidoCuerpo{
+	margin:0px;
+	margin-top:14px;
+	background:#FFFFFF;
+	height:100%;
+}
+
+.fondoImagenes{
+	background:transparent;
+}
+/*Final estilos del cuerpo*/
+
+/*Inicio estilos del menu principal*/
+#menuprincipal{
+	position:absolute;
+	width: 100%;
+	height: 100%;
+    /*padding-top:5%;*/
+}
+
+#wrapperMenu {
+	position:absolute; z-index:1;
+	top:0;
+	bottom:0; left:0;
+	height:100%;
+	width:80%;
+	overflow:auto;
+	background: #414042;
+}
+
+.borde-menu{
+	width:5px;
+	float:left;
+	left:0px;
+	height:100%;
+	margin-right:10px
+}
+
+.color1{
+	background:#2ed877;
+}
+
+.color2{
+	background:#3398dc;
+}
+
+.color3{
+	background:#f4c601;
+}
+
+.color4{
+	background:#fa5039;
+}
+
+.color5{
+	background:#f9870b;
+}
+
+.color6{
+	background:#00c8a4;
+}
+/*Fin del estilo del menu principal*/
+
+/*Inicio estilos de las capas internas de los iscroll, tanto cuerpo como menu*/
+.scroller {
+	position:absolute; z-index:1;
+	width:100%;
+	padding:0;
+}
+
+.scroller ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+
+
+
+/*Inicio c���digo de posici���n y transici���n de las p���ginas*/
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+ 
+.page.center {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.page.right {
+    -webkit-transform: translate3d(80%, 0, 0);
+    transform: translate3d(80%, 0, 0);
+}
+ 
+.page.transition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+}
+/*Fin c���digo de posici���n y transici���n de las p���ginas*/
+
+#fondo_loading {
+width:100%;
+height:100%;
+background:url("../img/logo_loading.png") no-repeat center #003c04;
+}
+/* HOME */
+.main-header {
+    background-image: url("../img/fondo_mesa.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+	overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+   }
+   .aviso-header {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+	overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+   }
+/* MENU LATERAL */
+h6.titulo_menu {background:#FFFFFF; text-align:center; margin:0px; padding:14px 0px; color:#FFF; text-transform:uppercase; font-size:16px;}
+#ulMenu {list-style:none; margin:0px; padding:0px;}
+#ulMenu li {background:#FFFFFF; padding:13px 10px; border-bottom:none; border-top:none;}
+#ulMenu li i {float:left; margin-right:5px; margin-left:5px; color:#FFF; font-size:18px; padding:2px; text-shadow: 0px 0px 0px #000; width:20px;}
+#ulMenu li span {font-size:14px;font-family:"Gotham";}
+#ulMenu li a {color:#414042; display:block;text-transform:uppercase;}
+#ulMenu li a.minuscula {color:#414042; display:block; font-weight:0;text-transform:none !important;}
+#ulMenu li.activado a {color:#FFFFFF;}
+#ulMenu li.activado i {color:#FFFFFF;}
+
+/* DETALLE RESTAURANTE */
+.titulo_restaurante {background:#E0323C; margin-right:3%; margin-left:3%; padding:5px; border-radius:5px 5px 5px 5px; margin-top:-35px; margin-bottom:10px; z-index:9999999; position:relative; box-shadow:0px 0px 1px #000;}
+.titulo_restaurante h2 {font-size:18px; color:#FFF; margin:0px; padding:0px; line-height:normal;}
+.titulo_restaurante h3 {color:#FFF; font-weight:100; font-size:16px; margin:0px; padding:0px; line-height:normal;}
+
+
+.fotos {display:table; /*padding:2px;*/}
+.fotos ul {list-style:none; margin:0px; padding:0px;}
+.fotos ul li {float:left; width:70px; height:70px; margin-bottom:0px; margin-left:3px;}
+.fotos ul li img {/*padding:2px;*/ width:70px; height:70px;}
+
+.features {display:table; /*padding:2px;*/}
+.features ul {list-style:none; margin:0px; padding:0px;}
+.features ul li {float:left; width:30px; height:30px; margin-bottom:0px; margin-left:3px;}
+.features ul li img {/*padding:2px;*/ width:30px; height:30px;}
+
+.reservar {}
+.reservar a {display:block; background:green; text-align:center; padding:10px; color:#FFF; font-size:160%; font-weight:bold; margin-right:3%; margin-left:3%; margin-bottom:10px;  border-radius:5px 5px 5px 5px;}
+
+.contenido {margin:15px; text-align:justify; color:#333;}
+.contenido p {margin-bottom:10px;}
+
+#restaurantDetailSaveOrDeleteFavoriteButton {
+    margin-top:25px;
+    margin-left:10px;
+}
+
+#restaurantDetailReservationButton img {
+    max-width: none !important;
+    width:50% !important;
+}
+
+#restaurantDetailValoration {
+/*color:#21c368 !important;*/
+-webkit-text-fill-color: #FFFFFF;
+-webkit-text-stroke-color: #21c368 !important;
+-webkit-text-stroke-width: 0.75px;
+font-size:14px;
+/*width:35%;*/
+float:right;
+margin-top:-30px !important;
+/*margin-right: -19px !important;*/
+}
+
+#restaurantDetailDistance {
+    color: #21c368;
+    font-size:12px;
+    float:right;
+    margin-top:-21px;
+}
+
+#restaurantDetailIcLocation {
+    width: 15px !important;
+    height: 17px !important;
+}
+
+#restaurantDetailVerMapaText {
+    font-size:12px;
+}
+
+#restaurantDetailListasDesplegables {
+    width:95%;
+    font-size: 12px;
+}
+
+#restaurantDetailListasDesplegables img {
+    width: 30% !important;
+    max-width: 150px;
+}
+
+#restaurantDetailListasDesplegables ul>li:first-child {
+    border-top: 1px solid #B4B4B4;
+}
+
+#restaurantDetailListasDesplegables li {
+    border-bottom: 1px solid #FFFFFF;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#restaurantDetailPromocionesList,
+#restaurantDetailMenuList,
+#restaurantDetailCartaList,
+#restaurantDetailCartaVinosList {
+    background: #f0f0f0;
+}
+
+/* LISTADO EVENTOS */
+ul.listado {list-style:none; padding:0px; margin:0px;}
+ul.listado li {display:table; width:96%;background:white; border:1px solid white !important; border-radius:5px 5px 5px 5px !important; margin-bottom:5px !important; max-height: 90px !important;}
+ul.listado li a {display:table-cell; /*border:5px solid #e5e4e2;*/}
+ul.listado li a:hover {color:#565656;}
+ul.listado li a img {float:left; width:30%;  margin-right:10px; border-radius:5px 5px 5px 5px;}
+ul.listado li a.destacado {background:url("../img/flecha_listado.png") no-repeat right center #fffdb9;}
+ul.listado li a h1 {/*color:#565656; font-size:70%; padding:0px; margin:0px; line-height:normal;text-transform:uppercase;padding-right: 25%;*/
+color: #565656;
+font-family:"Gotham" !important;
+font-size: 70% !important;
+padding: 0px;
+margin: 0px;
+line-height: 14px !important;
+text-transform: uppercase;
+/* padding-right: 25%; */
+float: left;
+display: table-cell;
+width: 30%;
+}
+
+ul.listado li a span {
+color:#565656;
+font-size:75%;
+float: right;
+/*margin-top: -10px;*/
+margin-left: 70%;
+width: 35%;
+line-height: 14px;
+}
+
+ul.listado li a #date {
+	margin-top: -85px;
+	font-weight:bold;
+}
+
+ul.listado li a #totalTicketsOnlineSale {
+	margin-top:-65px;
+}
+
+ul.listado li a #totalTicketsSold {
+	margin-top:-45px;
+}
+
+ul.listado li a #totalTicketsValidated {
+	margin-top:-25px;
+}
+
+ul.listado li a #totalTicketsUnvalidated {
+	margin-top:-5px;
+}
+
+#descripcion{/*font-size:60%;display:table-cell;width:40%;padding-right: 45%;line-height: 14px;*/
+font-size: 60%;
+display: table-cell;
+width: 30%;
+float: left;
+line-height: 14px;}
+
+#reservar{
+width: 78px;
+float: right;
+margin-right: 4px;
+margin-top: -7px;
+}
+
+#imagenrestaurante{
+width:90px;
+min-height:85px;
+height:auto;max-height:90px;
+}
+
+#valoration {
+/*color:#21c368 !important;*/
+-webkit-text-fill-color: #FFFFFF;
+-webkit-text-stroke-color: #21c368 !important;
+-webkit-text-stroke-width: 0.75px;
+font-size:14px;
+width:35%;
+float:right;
+margin-top:1px !important;
+margin-right: -19px !important;
+}
+
+
+.mas_padding {padding:15px; font-size:14px}
+
+/*LISTADO COMPRAS CLIENTES*/
+#customersResultList li {
+    width: 96%;
+}
+
+#totalTicketsValUnval {
+	position:fixed;
+    /*position:relative;*/
+	background: yellow;/*#414042;*/
+	text-align:center;
+	font-size: 16px;
+	color:#414042;
+	width:100%;
+	padding: 5px;
+	padding-top:8%;
+	/*top:45px;*/
+    top:20px;
+	z-index:9995 !important;
+}
+
+#linkSearch {
+	margin-right: 50px;
+	float:right;
+	z-index:9999 !important;
+}
+
+#imgSearch {
+	height:20px;
+}
+
+#linkBack {
+	margin-left: 5px;
+	float:left;
+	z-index:9997 !important;
+}
+
+#imgBack {
+	height:20px;
+}
+
+#customersResultList li {
+	padding:5px;
+}
+
+#customersResultList #enabled {
+	color:yellow;
+	font-size:50px;
+	float:left;
+	margin-top:30px;
+}
+
+#customersResultList #customerName {
+	margin-left:40px;
+}
+
+#customersResultList #externalId {
+	margin-left:40px;
+	max-width:50%;
+}
+
+#customersResultList #totalTicketsBuy {
+	float:right;
+	margin-top:-33px !important;
+}
+
+/*DETALLE COMPRA ENTRADAS*/
+.validateDisabled {
+	padding:10px;
+	background: #414042;
+	font-size:18px;
+	color:#FFFFFF;
+	min-width:150px;
+}
+
+.validateEnabled {
+	padding:10px;
+	background: green;
+	font-size:18px;
+	color:#FFFFFF;
+	min-width:150px;
+}
+
+/* LISTADO TICKETS */
+/*#ticketsResultsFixedDiv {
+    position:fixed;
+    /*position:relative;*/
+	background: yellow;/*#414042;*/
+	text-align:center;
+	font-size: 16px;
+	color:#414042;
+	width:100%;
+	padding: 5px;
+	padding-top:8%;
+	/*top:45px;*/
+    top:35px;
+	z-index:9995 !important;
+}
+
+#ticketsResultsFixedDiv #linkBack {
+	margin-left: 5px;
+	float:left;
+	z-index:9997 !important;
+}
+
+#ticketsResultsFixedDiv #imgBack {
+	height:20px;
+}*/
+
+/*RESERVAS  */
+.reservas {}
+h3.titulo_reservar {padding:10px; margin:0px; line-height:normal; font-size:16px; color:#FFF;}
+.reservas input {margin:10px; width:90%;}
+.reservas select {margin:10px; width:90%;}
+.reservas span {width:100%; display:block; border-bottom:1px solid #CCC;}
+
+.estatica {}
+.estatica h2 {background:#f8f8f8; border-bottom:1px solid #CCC; padding:15px; font-size:20px; margin:0px;  line-height:normal; margin-bottom:20px; padding-left:5%; text-transform:uppercase;}
+.estatica p {margin-left:5%; margin-right:5%;}
+h2{
+padding: 13px;
+font-size: 14px;
+margin: 0px;
+padding-left: 5%;
+text-transform: uppercase;
+font-family:"Gotham" !important;
+line-height:20px;
+letter-spacing: 2px;
+
+}
+.detailreserva{
+	width:78px !important;
+	float:left !important;
+	
+}
+
+.interior_dentro {background:#105f13; margin-right:3%; margin-left:3%; padding:5px; /*border-radius:5px 5px 5px 5px;*/ margin-top:-35px; z-index:9999999; position:relative; /*box-shadow:0px 0px 1px #000;*/}
+
+/* ICONOS */
+ul.iconos_awe {list-style:none; margin:0px; padding:0px;}
+ul.iconos_awe li {font-size:20px; width:25%; float:left; text-align:center; padding:10px;}
+
+#caja {
+display: none;
+z-index: 9;
+position:absolute;
+background:#000;
+width:100%;
+}
+
+#caja div.buscador {float:left; margin:10px 10px 0px 10px; width:80%;}
+#caja div.buscador input {width:100%;}
+#caja div.cerrar {float:right; color:#FFF; margin:10px;}
+
+.busqueda {padding-right:5%; padding-left:5%; padding-top:7%; padding-bottom:7%;}
+.busqueda input {width:85%!important; margin-bottom:10px;}
+.busqueda {background:#414042;}
+
+.input-prepend {display:inline;}
+
+.sub_menu_map {padding:0px; text-align:center;}
+.sub_menu_map a {display:block; width:50%; background:#E0323C; float:left; padding:10px 0px; padding-top:3%; color:#FFF; font-weight:bold;}
+.sub_menu_map a.sinlink {background:#E54D39; font-weight:normal;}
+
+.favoritos {float:right; background:#E54D39; color:#FFF; padding:10px; -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px; font-size:16px;}
+
+
+/* MAPA EN RESTAURANTE */
+.distance_map {background:#105f13; margin-right:3%; margin-left:3%; padding:5px; border-radius:5px 5px 5px 5px; margin-top:15px; margin-bottom:10px; z-index:9999999; position:relative; box-shadow:0px 0px 1px #000; color:#FFF;}
+.time_map {background:#105f13; margin-right:3%; margin-left:3%; padding:5px; border-radius:5px 5px 5px 5px; margin-top:15px; margin-bottom:10px; z-index:9999999; position:relative; box-shadow:0px 0px 1px #000; color:#FFF;}
+
+
+
+/* Añadido para modificar el select , 07/04/2014 */
+#foodTypeSelect,
+#searchTypeSelect {
+border: 0px solid #ccc;
+background: URL("../img/ic_select.png") no-repeat !important;
+background-size: 15px 100% !important;
+background-position: right !important;
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+width: 170px !important;
+float: right;
+padding-top: 0px;
+/* height: 14px; */
+position: relative;
+top: -6px;
+color: #414042;
+ }
+ 
+#starVal1,
+#starVal2,
+#starVal3,
+#starVal4,
+#starVal5 {
+    -webkit-text-fill-color: #FFFFFF;
+    -webkit-text-stroke-color: #21c368 !important;
+    -webkit-text-stroke-width: 0.75px;
+}
+
+
+/* LISTADO PROMOCIONES */
+ul.listadopromo {list-style:none; padding:0px; margin:0px;}
+ul.listadopromo li {display:table; width:96%;background:white; /*border:1px solid white !important;*/ border-radius:5px 5px 5px 5px !important; margin-bottom:5px !important; max-height: 90px !important;}
+ul.listadopromo li a {display:table-cell; /*border:5px solid #e5e4e2;*/}
+ul.listadopromo li a img {/*float:left; width:30%;  margin-right:10px; border-radius:5px 5px 5px 5px;*/}
+ul.listadopromo li a.destacado {background:url("../img/flecha_listado.png") no-repeat right center #fffdb9;}
+ul.listadopromo li a h3 {/*color:#565656; font-size:70%; padding:0px; margin:0px; line-height:normal;text-transform:uppercase;padding-right: 25%;*/
+color: #565656;
+font-family:"Gotham" !important;
+font-size: 10px !important;
+padding: 0px;
+margin: 0px;
+/*line-height: normal;*/
+text-transform: uppercase;
+/* padding-right: 25%; */
+/*float: left;*/
+/*display: table-cell;*/
+/*width: 38%;*/
+
+}
+
+ul.listadopromo li a span {font-size:75%;
+float: right;
+/*margin-top: -10px;
+margin-right: -19px;
+width: 35%;*/
+line-height: 14px;
+}
+
+#descripcionpromo{
+font-size: 14px !important;
+/*display: table-cell;
+width: 30%;
+float: left;*/
+line-height: 14px;
+margin-left:5px !important;
+}
+
+#reservar{
+width: 78px;
+float: right;
+margin-right: 4px;
+margin-top: -7px;
+}
+
+#imagenrestaurante{
+width:90px;
+min-height:85px;
+height:auto;max-height:90px;
+}
+
+#valorationpromo {
+/*color:#21c368 !important;*/
+-webkit-text-fill-color: #FFFFFF;
+-webkit-text-stroke-color: #000000 !important;
+-webkit-text-stroke-width: 0.75px;
+font-size:14px;
+/*width:35%;
+float:right;
+margin-top:1px !important;
+margin-right: -19px !important;*/
+margin-left:5px;
+}
+
+#div1-promo {
+    width:48%;
+    float:left;
+    border-radius:5px 0px 0px 5px;
+    background: rgba(255, 255, 255, 0.5)
+    /*background-position:center;
+    background-size:auto 100%;
+    background-repeat:no-repeat;*/
+}
+
+#div2-promo {
+    width:42%;
+    float:left;
+}
+
+#div3-promo {
+    width:10%;
+    float:left;
+
+}
+
+#restname-promo {
+    font-family:"Gotham" !important;
+    font-size:18px !important;
+    color: #000000;
+    line-height: 16px;
+    margin-left:5px;
+}
+
+#restdata-promo {
+    font-size:10px !important;
+    color:#000000;
+    margin-left:5px;
+    line-height: 16px;
+}
+
+#dates-promo {
+    font-size:14px !important;
+    color:#21c368;
+    margin-left:5px;
+    margin-top: 8px;
+}
+
+#ic-calendar-promo {
+    width: 15px;
+    height: 15px;
+}
+
+#line-separation-promo {
+    width:95%;
+    margin-left:5px;
+    margin-top:0px;
+    margin-bottom:5px;
+    border:0;
+    border-top:#414042 1px solid;
+}
+
+ul.listadopromo li {
+    background-size: 48% 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+#div3-promo a {
+    float:right;
+    margin-right:3px;
+}
+
+#div3-promo img {
+    width: 15px;
+    height: 17px;
+}
+
+#img-reservation {
+    margin-top:15px !important;
+}
+
+#img-favorite {
+    margin-top:10px !important;
+    width: 19px !important;
+}
+
+#img-detail {
+    width: 19px !important;
+}
+
+/* MAPA PROMOCIONES */
+#infoMap h1 {
+    font-family:"Gotham" !important;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#valorationpromomap {
+/*color:#21c368 !important;*/
+-webkit-text-fill-color: #FFFFFF;
+-webkit-text-stroke-color: #21c368 !important;
+-webkit-text-stroke-width: 0.75px;
+font-size:14px;
+/*width:35%;
+float:right;
+margin-top:1px !important;
+margin-right: -19px !important;*/
+/*margin-left:5px;*/
+}
+
+.starpromomapactive {
+-webkit-text-fill-color: #21c368 !important;
+}
+
+#imgDetailMap {
+    margin-top:10px !important;
+    width: 10px !important;
+    float:right;
+}
+
+#promoDescriptionMap {
+    margin-left:10px;
+    margin-top:5px !important;
+    line-height:14px;
+}
+
+/* LISTADO NOTICIAS */
+#linkDetalleNoticia {
+width:100% !important;
+}
+
+#divTitleNews,
+#divPhotoNews,
+#divDescriptionNews {
+    width: 100% !important;
+    padding:10px !important;
+}
+
+#divTitleNews h3 {
+    width:60% !important;
+}
+
+#divDescriptionNews p {
+    width: 95% !important;
+}
+
+#iconGetDetail {
+    width: 15px;
+    float:right;
+    padding-right: 10px !important;
+}
+
+#imagennoticia {
+    width: 93%;
+    padding-top:10px;
+    border-radius:0px 0px 0px 0px !important;
+}
+
+/* DETALLE NOTICIA */
+
+#iconTwitterDetail,
+#iconFacebookDetail,
+#iconMailDetail {
+    height:18px !important;
+    padding-top: 37px;
+}
+
+#iconFacebookDetail,
+#iconMailDetail {
+    margin-left: 10px;
+}
+
+
+

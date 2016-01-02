@@ -1,0 +1,127 @@
+<style>
+    /*.scroller {height:100%!important;}*/
+    .scroller {height:100% !important; overflow: scroll !important; -webkit-overflow-scrolling: touch !important; margin:0px;}
+    </style>
+<ul id="ulMenu">
+	<!--<img src="img/logo_menu.png"/>-->
+	<!-- <li style="border-top:0px;" class="activado">
+		<a href="javascript:showHome();">
+			<i class="icon-home"></i> <span>Inicio</span>
+		</a>
+	</li>-->
+	<li style="text-align:center !important;">
+		<h3>NidoPass SuperAdmin Control</h3>
+		<br/><br/>
+		<span><img id="menuPubLogo" src="" style="width:60%; max-width:150px;/*height:60%;*/margin-bottom:32px;"/></span>
+	</li>
+    <li>
+		<a href="index.html" onclick="historyClear();">
+			<i><img src="./img/ic_home.png" style="width:100%;/*height:100%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;margin-top:10px;">Inicio</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>
+	<!--<li>
+		<a href="#" onclick="javascript:showQRCodeScanner();">
+			<i><img src="./img/ic_qr.png" style="width:100%;/*height:100%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;margin-top:10px;">Valid. Entradas</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>-->
+	<!--<li>
+		<a href="javascript:menuShowTemplate('home')">
+			<i><img src="./img/ic_ticket.png" style="width:100%;/*height:25px;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;">Control Entradas</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>-->
+	<!--<li>
+		<a href="#" onclick="javascript:menuShowTemplate('misReservas');">
+			<i><img src="./img/ic_reservas.png" style="width:100%;/*height:100%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;">Mis reservas</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>-->
+	<!--<li>
+		<a href="#" onclick="javascript:menuShowTemplate('promotionsIndex');">
+			<i><img src="./img/ic_promociones.png" style="width:100%;/*height:100%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;">Promociones</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>
+	<li>
+		<a href="#" onclick="javascript:menuShowTemplate('noticiasEventos');">
+			<i><img src="./img/ic_eventos.png" style="width:100%;/*height:100%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;">Noticias & Eventos</span>
+                <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>
+	<li>
+		<a href="#" onclick="javascript:menuShowTemplate('twitter');">
+						<i><img src="./img/ic_twitter.png" style="width:100%;/*height:100%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;">Twitter</span>
+                        <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+
+		</a>
+	</li>
+    <li>
+		<a href="#" onclick="navigator.app.loadUrl('https://facebook.com/ComeenAragon', { openExternal:true });">
+            <i><img src="./img/ic_facebook.png" style="width:60%;/*height:60%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;">Facebook</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+            
+		</a>
+	</li>
+	<li>
+		<a href="#" onclick="navigator.app.loadUrl('http://instagram.com/ComerEnAragon', { openExternal:true });">
+			<i><img src="./img/ic_instagram.png" style="width:100%;/*height:100%;*/background-position: -72px -48px;margin-right:15px;"/></i> <span style="margin-left:20px;">Instagram</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>-->
+	
+	<!-- 
+	<li>
+		<a href="javascript:show('restaurantDetail');">
+			<i class="icon-ok-sign"></i> <span>Detalle de Restaurante</span>
+		</a>
+	</li> 
+	<li>
+		<a href="javascript:show('reservation');">
+			<i class="icon-phone"></i> <span>Reservar</span>
+		</a>
+	</li>
+-->	
+	<!--<div style="padding-top:50px; background:#FFFFFF">
+	<li>
+		<a href="javascript:menuShowTemplate('contacto');" class="minuscula">
+			 <span style="margin-left:10px;">Contacta</span>
+             <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>
+    <li>
+		<a href="javascript:menuShowTemplate('sugerencias');" class="minuscula">
+            <span style="margin-left:10px;">Sugerencias</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>
+	<li>
+		<a href="javascript:showPlayStore();" class="minuscula">
+			<span style="margin-left:10px;">Valorar App</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>
+	 <li>
+		<a href="javascript:menuShowTemplate('avisoLegal');" class="minuscula">
+			<span style="margin-left:10px;">Aviso Legal</span>
+            <img src="./img/ic_select.png" style="width:8px; float:right !important; margin-top:2px;" />
+		</a>
+	</li>
+	</div>-->
+	<!--<li>
+		<a href="javascript:show('ayuda');">
+			<i class="icon-question-sign"></i> <span>Ayuda</span>
+		</a>
+	</li>
+	<li>
+		<a href="javascript:show('sugerencias');">
+			<i class="icon-desktop"></i> <span>Sugerencias</span>
+		</a>
+	</li>
+	-->
+	
+	
+	
+	
+</ul>

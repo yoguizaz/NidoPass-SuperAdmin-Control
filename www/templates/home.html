@@ -1,0 +1,101 @@
+<link rel="stylesheet" type="text/css" href="css/home.css" />
+<link rel="stylesheet" href="css/range.css">
+<style>
+.scroller {height:100%!important;}
+</style>
+<script src="http://zeptojs.com/zepto.min.js"></script>
+<script src="./js/range-touch.js"></script>
+<script src="./js/display-range-value.js"></script>
+<div class="main-header">
+	<div class="busqueda" style="padding-left:0px; padding-right:0px; padding-bottom:0px;">
+		<center> <font color="#FFF"><small>Artista Evento: </small></font></center>
+			<form onsubmit="showResults(); return false;">
+				<div class="cajita"><div class="input-prepend">
+                <div style="padding-left:5%; padding-right:5%;">
+	              <!--<span class="add-on"><i class="icon-search"></i></span>-->
+	              <input type="text" placeholder="introduce el artista del evento" id="prependedInput" class="span2" style="border:none;color:#414042;">
+                </div>
+	              <br>
+					<div style="background: #FFF;position: relative; width:90%;padding-left: 5% !important;padding-right: 5% !important; padding-top: 5%; padding-bottom:0%;">
+						<center><font style="font-size:14px;color:#414042;">Buscar por fechas:</font></center>
+						<br/><br/>
+                        <font style="font-size:14px;color:#414042;">Sala:</font>
+                        <span>
+                            <select style="width:238px; margin-left:13px;" id="pubsList" required="">
+				  				
+				            </select>
+                        </span>
+                        <br/><br/>
+				  		<font style="font-size:14px;color:#414042;">Desde:</font>
+				  		<span>
+				  			<select style="width:70px; display:none;" id="eventsDateDayFrom" required="">
+				  				
+				            </select>
+				            <!--<font style="font-size:14px;color:#414042;">/</font>-->
+				            <select style="width:70px;" id="eventsDateMonthFrom" required="">
+				            	
+				            </select>
+				            <font style="font-size:14px;color:#414042;">/</font>
+				            <select style="width:80px;" id="eventsDateYearFrom" required="">
+				            	
+				            </select>		
+			            </span>
+			            <hr style="margin-top:15px !important; margin-bottom:20px !important;">
+			           <font style="font-size:14px;color:#414042;">Hasta:</font>
+			            <span>
+				  			<select style="width:70px; display:none;" id="eventsDateDayTo" required="">
+				  				
+				            </select>
+				            <!--<font style="font-size:14px;color:#414042;">/</font>-->
+				            <select style="width:70px;" id="eventsDateMonthTo" required="">
+				            	
+				            </select>
+				            <font style="font-size:14px;color:#414042;">/</font>
+				            <select style="width:80px;" id="eventsDateYearTo" required="">
+				            	
+				            </select>		
+			            </span>
+						<!-- <select id="distanceSelect" class="span2" style="width:100px;">
+						  <option value="all" selected="">Distancia</option>
+						  <option value="200">&lt; 200 metros</option>
+						  <option value="800">&lt; 800 metros</option>
+						</select> -->
+                        <hr style="margin-top:15px !important; margin-bottom:20px !important;">
+						<!--<font style="font-size:14px;">Tipo de busqueda</font>
+						
+						<select id="searchTypeSelect" class="span2" style="left: 5px;">
+                            <option value="geolocation" selected="">Geolocalización</option>
+                            <option value="huesca">Provincia: Huesca</option>
+                            <option value="teruel">Provincia: Teruel</option>
+                            <option value="zaragoza">Provincia: Zaragoza</option>
+						</select>
+                        <hr style="margin-top:8px !important; margin-bottom:8px !important;">
+						<font style="font-size:14px;">Tipo de comida</font>
+						
+						<select id="foodTypeSelect" class="span2" style="left: 5px;">
+						<option value="all" selected="">Elige</option>
+						</select>
+						<hr style="margin-top:8px !important; margin-bottom:8px !important;">
+                        <font style="font-size:14px;"> Precio </font>
+						<br><span style="font-size:14px;">5€</span><input id="priceSelect" type="range" min="5" max="60" step="5" value="30" class="custom display-value" style="width:85% !important;"><span style="font-size:14px;">60€</span>
+                        <hr style="margin-top:8px !important; margin-bottom:8px !important;">
+						 <font style="font-size:14px;"> Distancia </font>
+						<br><span style="font-size:14px;">500m</span><input id="distanceSelect" type="range" min="500" max="200000" step="500" value="2000" class="custom display-value" style="width:75% !important;"><span style="font-size:14px;">200km</span>-->
+						<!-- <select id="priceSelect" class="span2" style="width:100px; margin-bottom: 10px;margin-left: 2px;">
+						<option value="all" selected="">Precio</option>
+						<option value="<5">&lt; 5 &#8364;</option>
+						<option value="5-10">5 - 10 &#8364;</option>
+						<option value="10-20">10 - 20 &#8364;</option>
+						<option value="20-30">20 - 30 &#8364;</option>
+						<option value="30-40">30 - 40 &#8364;</option>
+						<option value=">40">&gt; 40 &#8364;</option>
+						</select> -->
+						<div class="enviar" style="text-align:center; width:60%; padding-bottom:5%; margin-left:20% !important;">
+							<button class="btn btn-large" style="margin-top:20px; padding-left:15% !important;" type="submit"><img src="img/lupa_white.png" style="width:20px !important;heigth:20px !important;padding-right:10px;"/>Buscar</button>
+						</div>
+					</div>
+				</div></div>
+				
+			</form>
+	</div>
+</div>

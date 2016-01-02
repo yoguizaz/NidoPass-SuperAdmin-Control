@@ -1,0 +1,91 @@
+<link rel="stylesheet" type="text/css" href="css/home.css" />
+<link rel="stylesheet" type="text/css" href="css/range.css" />
+<div id="scrollable" style="margin-top:15px; margin-left:5px; background:white; margin-left:0px !important; margin-right:0px !important;">
+<style>
+/*.scroller {height:100%!important;}*/
+.scroller {height:100% !important; overflow: scroll !important; -webkit-overflow-scrolling: touch !important; margin:0px;}
+input[type="text"],
+input[type="email"]{
+    width:50%;
+    float:right;
+    right:5%;
+}
+
+#edad {
+    width:20%;
+}
+
+#conocer {
+    padding-left:10% !important;
+}
+</style>
+<div id="interior_dentro" class="interior_dentro mas_padding" style="background:white; margin-top:10px; padding-top:5% !important; padding-bottom:5%;">
+    <h3>Sugerencias</h3>
+	<form id="formularioSugerencias" onsubmit="ajaxFormulario(event);" method="post">
+		Nombre:* <input type="text" name="nombre" size="35" required maxlength="50"><br><br>
+		Apellidos: <input type="text" name="apellidos" size="35" maxlength="100">
+		<br><br>
+		Correo electrónico:* <input type="email" placeholder="tu@email.com" required name="correo" size="35" maxlength="100">
+		<br><br>
+		Población: <input type="text" name="poblacion" size="35" maxlength="50">
+		<br><br>
+		Provincia: <input type="text" name="provincia" size="35" maxlength="50">
+		<table width="100%" border="0" cellspacing="0" cellpadding="5">
+		<tr>
+		<td id="edad">Edad:
+		<br>
+		<input type="radio" name="edad" value="<20"> <20
+		<br>
+		<input type="radio" name="edad" value="20a40" checked> 20/40
+		<br>
+		<input type="radio" name="edad" value="40a60"> 40/60
+		<br>
+		<input type="radio" name="edad" value=">60"> >60</td>
+		<td id="conocer">Cómo conociste "Comer en Aragón"?<br>
+		<input type="radio" name="conocer" value="A través de un amigo.">
+		A través de un amigo.<br>
+		<input type="radio" name="conocer" value="A través de un restaurante.">
+		A través de un restaurante.<br>
+		<input type="radio" name="conocer" value="Navegando por la red.">
+		Navegando por la red.<br>
+		<input type="radio" name="conocer" value="Prensa.">
+		Prensa.<br>
+		<input type="radio" name="conocer" value="Otros.">
+		Otros</td>
+		</tr>
+		</table>
+		Opinión sobre nuestra p&aacute;gina app<br>
+		<textarea cols="35" rows="5" name="opinion" placeholder="Escriba aquí su opinión..."></textarea>
+		<br><br>
+		Tiene alguna sugerencia... *
+		<br>
+		<textarea cols="35" rows="5" name="sugerencias" placeholder="Escriba aquí sus sugerencias..." required></textarea>
+		<br><br>
+		¿Cuántas horas al día utilizas tu smartphone? (Se&ntilde;ala la opci&oacute;n que 
+		m&aacute;s se acerque)<br>
+		<select name="frecuencia" size="2">
+			<option value="2 horas al día.">2 horas al día.
+			<option value="4 horas al día.">4 horas al día.
+			<option value="10 horas a la semana.">10 horas a la semana.
+			<option value="20 horas al mes.">20 horas al mes.
+		</select>
+		<br>
+		<br>
+		<table width="50%" border="0" align="center" cellpadding="10" cellspacing="0">
+			<tr>
+			<td><div align="center">
+			<input type="submit" class="btn" style="margin-left:10px; margin-right:15px;" value="Enviar">
+			</div></td>
+			<td><div align="center">
+			<input type="Reset" class="btn" value="Borrar">
+			</div></td>
+			</tr>
+		</table>
+	</form>
+    
+    <script>
+        
+    </script>
+    
+</div>
+</div>

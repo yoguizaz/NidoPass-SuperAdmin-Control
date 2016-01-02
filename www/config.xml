@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.nidoapp.nidopassticketvalidator"
+    version   = "0.9.0">
+    
+    <name>NidoPass Ticket Validator</name>
+    
+    <description>
+        Servicio de validación y control de entradas.
+    </description>
+
+<author href="http://www.nidoapp.com" email="dmv@nidoapp.com">
+Nido Aplicaciones
+</author>
+
+<!-- <preference name="phonegap-version" value="1.7.0" />  -->
+<preference name="phonegap-version" value="3.1.0" />
+
+<preference name="android-installLocation" value="preferExternal" />
+
+<preference name="orienation" value="default" />
+
+<preference name="android-targetSdkVersion" value="19" />
+
+<!-- Icons -->
+
+<icon src="img/icons/icon.png" />
+<icon src="img/icons/ios/icon.png" width="57" height="57" />
+<icon src="img/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+<icon src="img/icons/ios/icon_at_2x.png" width="114" height="114" />
+<icon src="img/icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+<icon src="img/icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+<icon src="img/icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+<icon src="img/icons/bb/icon.png" gap:platform="blackberry" />
+<icon src="img/icons/bb/icon_hover.png" gap:platform="blackberry" gap:state="hover"/>
+<icon src="img/icons/winphone/icon.png" gap:platform="winphone" />
+<!-- winphone requires a jpg for the tile icons -->
+<icon src="img/icons/winphone/tileicon.png" gap:platform="winphone" gap:role="background" />
+<icon src="img/icons/webos/icon.png" gap:platform="webos" />
+<icon src="img/icons/webos/miniicon.png" gap:platform="webos" gap:role="mini" />
+
+<!-- Splash Screens -->
+<gap:splash src="img/splash/splash.png" />
+<gap:splash src="img/splash/ios/Default-Landscape.png" width="1024" height="768" />
+<gap:splash src="img/splash/ios/Default-Portrait.png" width="768" height="1024" />
+<gap:splash src="img/splash/ios/Default.png" width="320" height="480" />
+<gap:splash src="img/splash/ios/Default_at_2x.png" width="640" height="960" />
+<gap:splash src="img/splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+<gap:splash src="img/splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+<gap:splash src="img/splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+<gap:splash src="img/splash/bb/splash.png" gap:platform="blackberry" />
+<gap:splash src="img/splash/winphone/splash.jpg" gap:platform="winphone" />
+
+</widget>

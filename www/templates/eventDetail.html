@@ -1,0 +1,211 @@
+
+<style>
+    .scroller {height:100% !important; overflow: scroll !important; -webkit-overflow-scrolling: touch !important; margin:0px; background:#FFFFFF;}
+</style>
+<div style="background:#FFFFFF !important; min-height:95%;">
+<!--<img id="restaurantDetailMapImage" src="img/mapa.png" onclick="viewRestaurantMap();" style="width:100% !important; height:150px !important;">-->
+<!--<div class="titulo_restaurante">
+	<div class="favoritos"><a href="#" id="restaurantDetailSaveOrDeleteFavoriteButton"><i class="icon-bookmark"></i></a></div>
+	
+	<h3 id="restaurantDetailAddress" style="font-weight:300;">Sin Especificar</h3>
+</div>-->
+<div class="aviso-header" style="padding-top:5% !important; padding-bottom:15% !important;">
+<!--<div style="height:20%;/*border-bottom: 1px solid #B4B4B4;*/padding-bottom: 10px; padding-top:5%;">-->
+	<div style="float:left;width:7%;"><a href="#" onclick="historyBack();"><img src="./img/ic_volver.png" style="width:8px;height:14px;padding-top: 37px;padding-left: 10px;"/></a></div>
+	<div style="float:left;width:40%;"><h2 id="eventDetailTitle">Sin Especificar</h2></div>
+    <!--<div style="float:left; color:#414042;height:5%;font-size:14px; width:30%;">
+        <div style="float:left; padding-left:10%; width:100%; padding-top:60px;"><a href="#" id="restaurantDetailValoration" onclick="javascript:getValoration();" class=""><i id="star1" class="icon-star"></i> <i id="star2" class="icon-star"></i> <i id="star3" class="icon-star"></i> <i id="star4" class="icon-star"></i> <i id="star5" class="icon-star"></i></a></div>
+    </div>-->
+	<!--<div style="float:left; margin-left:5%;"><img id="restaurantDetailSaveOrDeleteFavoriteButton" src="./img/ic_favoritos-green.png" style="width:10px;height:16px;padding-right:10px;padding-top: 37px;"></div>-->
+	<!--<div style="float:left;"><a href="#" class="detailreserva" id="restaurantDetailReservationButton"><img id="restaurantDetailReservationButtonImg" src="./img/btn_reservas.png" style="padding-top: 27px; padding-left: 10px;"/></a></div>-->
+<!--</div>-->
+<div style="clear:both;"></div>
+<div class="interior_dentro" style="background:none; margin-top:2%; margin-left:-5px !important; width:100% !important; margin-bottom:10px; padding-bottom:5% !important;">
+    <div class="fotos" style="width:100% !important;">
+        <!--<img src="./img/ic_volver_white.png" style="width:15px; float:left !important; position:absolute; top:45% !important;" onclick="getPrevImg();" />
+        <img src="./img/ic_select-white.png" style="width:15px; float:right !important; position:absolute; right:2% !important; top:45% !important;" onclick="getNextImg();" />
+        <a href="#" class="" id="restaurantDetailReservationButton" style="float:left; position:absolute;margin-left:35%; top:70% !important;"><img id="restaurantDetailReservationButtonImg" src="./img/btn_reservas.png" style="max-width:350px !important;" /></a>-->
+        <center><img id="eventDetailPhoto" style="max-width:50% !important;" src="" /></center>
+    </div>
+</div>
+
+<div style="color:#414042;height:5%;font-size:14px;padding: 10px; margin-top:-20px !important;">
+    <div style="float:left;padding-left:10px; width:100%;">
+    	<p id="eventDetailDate"></p>
+    	<p id="eventDetailMusicType"></p>
+    	<p id="eventDetailPrice"></p>
+    	<p id="eventDetailCommission"></p>
+    	<p id="eventDetailTotalTicketsOnlineSale"></p>
+    	<p id="eventDetailTotalTicketsSold"></p>
+    	<p id="eventDetailTotalTicketsValidated"></p>
+    	<p id="eventDetailTotalTicketsUnvalidated"></p>
+    	<p id="eventDetailUrl"></p>
+</div>
+<center><hr style="border:none; border-top: 1px solid #B4B4B4;width:95%;margin-top:5px;margin-bottom:5px;"></center>
+<!--
+<div class="interior_dentro" style="background:none; margin-top:10px; margin-bottom:10px;">
+<div class="fotos">
+	<ul id="restaurantDetailPhotos">
+	</ul>
+</div>
+</div>
+
+<div class="row">
+  <div class="span12">
+  	<ul id="restaurantDetailPhotos">
+  </div>
+</div>
+
+-->
+<style type="text/css">
+/* Usando border-radius (para todos los navegadores)
+y overflow:hidden , se logra el efecto en la IMG */
+
+</style>
+<!--<div class="aviso-header">-->
+<!--<div id="restaurantDetailPhotos" class="imagen2"></div>-->
+<!--<div class="reservas">
+
+	<span style="margin-top:10px; text-align:center; border:0px; margin-bottom:10px;">-->
+		<!--<a href="#" onclick="historyBack();" class="btn btn-default btn-large"> Volver</a>
+		<a href="#" class="btn btn-success btn-large" id="restaurantDetailReservationButton">Reservar</a>-->
+		<!--
+		<a href="#" onclick="viewRestaurantMap();" class="btn btn-default btn-large"> C��mo llegar</a>
+		-->
+	<!--</span>
+
+</div>-->
+
+<!--<div style="clear:both;"></div>-->
+<!--
+<div class="interior_dentro mas_padding" style="background:white; margin-top:10px;">
+    <p><strong>Teléfono:</strong> <span id="restaurantDetailTelephone"></span></p>
+    <p><strong>Precio de Menú:</strong> <span id="restaurantDetailMenuPrice"></span> Euros</p>
+    <p><strong>Horario:</strong> <span id="restaurantDetailOpeningHours"></span></p>
+    <p><strong>Días de cierre:</strong> <span id="restaurantDetailClosingDays"></span></p>
+    <p><strong>Cierre especial:</strong> <span id="restaurantDetailClosingSpecial"></span></p>
+</div>
+-->
+<!--<div class="interior_dentro" style="background:none; margin-top:10px; margin-bottom:10px;">
+    <div class="features">
+        <ul id="restaurantDetailFeatures">
+        </ul>
+    </div>
+</div>-->
+
+<!--<center><hr style="border:none; border-top: 1px solid #B4B4B4;width:95%;margin-top:5px;margin-bottom:5px;"></center>-->
+
+<div class="interior_dentro mas_padding" style="background:white; margin-top:10px;">
+	<p id="eventDetailDescription">El evento no tiene descripción.</p>
+</div>
+
+<center><hr style="border:none; border-top: 1px solid #B4B4B4;width:95%;margin-top:5px;margin-bottom:10px;"></center>
+
+<!--<center><div id="restaurantDetailListasDesplegables">
+    
+    <div id="restaurantDetailPromocionesHeader">
+        <center><img src="./img/m_promociones_detail.png" onclick="javascript:showDetailList('promociones');" /></center>
+    </div>
+    <div id="restaurantDetailPromocionesList" style="display:none;margin-top:10px;">
+        <ul id="promotionsListDetail">
+            
+        </ul>
+    </div>
+    
+    <center><hr style="border:none; border-top: 1px solid #B4B4B4;width:100%;margin-top:10px;margin-bottom:10px;"></center>
+    
+    <div id="restaurantDetailMenuHeader">
+        <center><img src="./img/m_menu_detail.png" onclick="javascript:showDetailList('menu');" /></center>
+    </div>
+    <div id="restaurantDetailMenuList" style="display:none;margin-top:10px;">
+        <ul id="menuListDetail">
+            
+        </ul>
+    </div>
+    
+    <center><hr style="border:none; border-top: 1px solid #B4B4B4;width:100%;margin-top:10px;margin-bottom:10px;"></center>
+    
+    <div id="restaurantDetailCartaHeader">
+        <center><img src="./img/m_carta_detail.png" onclick="javascript:showDetailList('carta');" /></center>
+    </div>
+    <div id="restaurantDetailCartaList" style="display:none;margin-top:10px;">
+        <ul id="carteListDetail">
+            
+        </ul>
+    </div>
+    
+    <center><hr style="border:none; border-top: 1px solid #B4B4B4;width:100%;margin-top:10px;margin-bottom:10px;"></center>
+    
+    <div id="restaurantDetailCartaVinosHeader">
+       <center><img src="./img/m_carta_vinos_detail.png" onclick="javascript:showDetailList('cartaVinos');" /></center>
+    </div>
+    <div id="restaurantDetailCartaVinosList" style="display:none;margin-top:10px;">
+        <ul id="carteWineListDetail">
+            
+        </ul>
+    </div>
+    
+</div></center>-->
+
+<!--<center><hr style="border:none; border-top: 1px solid #B4B4B4;width:95%;margin-top:5px;margin-bottom:5px;"></center>-->
+<!--
+<div class="interior_dentro mas_padding" style="background:white; margin-top:10px;">
+	<img src="./img/ic_restaurant-green.png" style="width:17px !important; height:15px !important; float:left;" /><p id="restaurantDetailAddress" style="float:left; padding-left:5px; margin-top:-3px;">-</p>
+</div>
+
+<center><hr style="border:none; border-top: 1px solid #B4B4B4;width:95%;margin-top:5px;margin-bottom:5px;"></center>
+
+<div class="interior_dentro mas_padding" style="background:white; margin-top:10px;">
+	<img src="./img/ic_telephone-green.png" style="width:15px !important; height:15px !important; float:left;" /><p id="restaurantDetailTelephone" style="float:left; padding-left:5px; margin-top:-3px;">-</p>
+</div>
+
+<center><hr style="border:none; border-top: 1px solid #B4B4B4;width:95%;margin-top:5px;margin-bottom:5px;"></center>
+
+<div class="interior_dentro mas_padding" style="background:white; margin-top:10px;">
+	<img src="./img/ic_restaurant_web-green.png" style="width:15px !important; height:15px !important; float:left;" /><p id="restaurantDetailWeb" style="float:left; padding-left:5px; margin-top:-3px;">-</p>
+</div>
+
+<center><hr style="border:none; border-top: 1px solid #B4B4B4;width:95%;margin-top:5px;margin-bottom:5px;"></center>
+
+<div class="interior_dentro mas_padding" style="background:white; margin-top:10px;">
+	<img src="./img/ic_clock-green.png" style="width:15px !important; height:15px !important; float:left;" /><p id="restaurantDetailOpening" style="float:left; padding-left:5px; margin-top:-3px;">-</p>
+</div>
+-->
+<!--<div class="interior_dentro" style="background:none; margin-top:10px; margin-bottom:10px; padding-bottom:5% !important;">
+    <div class="fotos">
+        <ul id="restaurantDetailPhotos">
+        </ul>
+    </div>
+</div>-->
+<!--
+<img id="restaurantDetailMapImage" src="img/mapa.png" onclick="viewRestaurantMap();" style="width:100% !important; height:270px !important;">
+-->
+    <center><div id="eventDetailButtons" style="width:90%; max-width:400px; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+        <img id="eventDetailButtonTicketsList" src="./img/btn_tickets_list_detail.png" style="width:49%; max-width:150px; float:left;" />
+        <img id="eventDetailButtonTicketsSales" src="./img/btn_tickets_sales_detail.png" style="width:49%; max-width:150px; float:right;" />
+    </div></center>
+   
+</div>
+
+</div>
+<!--
+<div id="valorarRestaurante" style="background:white !important; width:280px !important; position:fixed; height:250px !important; display:none; top: 15%;">
+    <p>Valorar Restaurante:</p>
+    <p><i id="starVal1" onclick="javascript:setValorationValue(1)" class="icon-star" style="font-size:50px !important;"></i><i id="starVal2" onclick="javascript:setValorationValue(2)" class="icon-star" style="font-size:50px !important;"></i><i id="starVal3" onclick="javascript:setValorationValue(3)" class="icon-star" style="font-size:50px !important;"></i><i id="starVal4" onclick="javascript:setValorationValue(4)" class="icon-star" style="font-size:50px !important;"></i><i id="starVal5" onclick="javascript:setValorationValue(5)" class="icon-star" style="font-size:50px !important;"></i></p>
+    <p><textarea id="comment" placeholder="Escribe aqui tu comentario..." rows="4" cols="50"></textarea></p>
+    <p><a href="#" onclick="javascript:sendRestaurantValoration()" class="btn btn-success btn-large" style="background:#21c368 !important; border:#21c368 !important; color:#FFFFFF !important; padding-left: 10px !important; padding-right: 10px !important; float:left; margin-left:5px;">Valorar</a>
+    <a href="#" onclick="hideLoading();" class="btn btn-default btn-large" style="padding-left: 10px !important; padding-right: 10px !important; padding-top: 12px !important; padding-bottom: 12px !important; float:right; margin-right:5px;">Cancelar</a></p>
+</div>
+-->
+<!--
+<div id="imgBigDiv" style="background:white !important; width:300px !important; position:fixed; height:290px !important; display:none; padding:5px !important; text-align:left !important;">
+    <img src="./img/ic_close.png" style="width:15px;" onclick="hideLoading();" />
+    <br><br>
+    <img src="./img/ic_volver_gray.png" style="width:15px; float:left !important; position:absolute; top:45% !important;" onclick="getPrevImgBig();" />
+    <img src="./img/ic_select.png" style="width:15px; float:right !important; position:absolute; right:2% !important; top:45% !important;" onclick="getNextImgBig();" />
+    <img id="imgBig" src="" />
+    <br>
+    <p id="imgBigDescription" style="font-weight:300;"></p>
+    
+</div>
+-->
